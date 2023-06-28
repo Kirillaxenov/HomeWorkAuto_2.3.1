@@ -1,5 +1,7 @@
 import com.github.javafaker.Faker;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Random;
 
@@ -22,5 +24,10 @@ public class DataGenerator {
 
     public static String generatePhoneNumber() {
         return faker.phoneNumber().phoneNumber();
+    }
+
+    public static String generateDate(long addDays, String pattern) {
+        return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
+
     }
 }

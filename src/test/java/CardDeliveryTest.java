@@ -1,11 +1,8 @@
-import com.codeborne.selenide.Configuration;
+
 import com.codeborne.selenide.selector.ByText;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
@@ -13,12 +10,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class CardDeliveryTest {
-    public String generateDate(long addDays, String pattern) {
-        return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
-    }
-
-    String planningDate = generateDate(4, "dd.MM.yyyy");
-    String futureDate = generateDate(5, "dd.MM.yyyy");
+    String planningDate = DataGenerator.generateDate(4, "dd.MM.yyyy");
+    String futureDate = DataGenerator.generateDate(5, "dd.MM.yyyy");
 
     @BeforeEach
     void setUp() {
