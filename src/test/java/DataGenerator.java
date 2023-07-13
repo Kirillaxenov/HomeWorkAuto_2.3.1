@@ -6,7 +6,7 @@ import java.util.Locale;
 import java.util.Random;
 
 public class DataGenerator {
-    private static Faker faker = new Faker(new Locale("ru"));
+    private static final Faker faker = new Faker(new Locale("ru"));
     private static Random random = new Random();
     private static String[] cities = {"Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Казань", "Белгород", "Курск", "Барнаул", "Нарьян-Мар"};
 
