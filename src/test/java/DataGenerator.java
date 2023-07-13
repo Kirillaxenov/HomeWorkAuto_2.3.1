@@ -26,6 +26,11 @@ public class DataGenerator {
         return faker.phoneNumber().phoneNumber();
     }
 
+    public static String generateIncompleteNumber() {
+        return faker.numerify("+# (###) ###");
+    }
+
+
     public static String generateDate(long addDays, String pattern) {
         return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
 
